@@ -8,8 +8,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectOutputStream;
 
-import me.varunon9.remotecontrolpc.CallbackReceiver;
-import me.varunon9.remotecontrolpc.MainActivity;
 
 public abstract class TransferFileToServer extends AsyncTask<String, String, Void> implements CallbackReceiver {
 

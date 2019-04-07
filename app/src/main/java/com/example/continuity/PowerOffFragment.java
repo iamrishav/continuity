@@ -11,12 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import me.varunon9.remotecontrolpc.MainActivity;
-import me.varunon9.remotecontrolpc.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class PowerOffFragment extends Fragment implements View.OnClickListener  {
 
     private Button shutdownButton, restartButton, sleepButton, lockButton;

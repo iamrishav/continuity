@@ -5,17 +5,6 @@ import android.os.AsyncTask;
 import java.io.File;
 import java.util.ArrayList;
 
-import file.AvatarFile;
-import me.varunon9.remotecontrolpc.CallbackReceiver;
-import me.varunon9.remotecontrolpc.R;
-import me.varunon9.remotecontrolpc.Utility;
-
-/*
- * The three types used by an asynchronous task are the following:
- * Params, the type of the parameters sent to the task upon execution.
- * Progress, the type of the progress units published during the background computation.
- * Result, the type of the result of the background computation.
- * */
 public abstract class FilesList extends AsyncTask<String, Void, ArrayList<AvatarFile>> implements CallbackReceiver {
 
 	@Override

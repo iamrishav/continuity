@@ -3,11 +3,7 @@ package com.example.continuity;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-import file.AvatarFile;
 
-/**
- * Created by varun on 30/7/17.
- */
 
 public class SendFilesList {
 

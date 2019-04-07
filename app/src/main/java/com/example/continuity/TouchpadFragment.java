@@ -11,12 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import me.varunon9.remotecontrolpc.MainActivity;
-import me.varunon9.remotecontrolpc.R;
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class TouchpadFragment extends Fragment {
 
     private Button leftClickButton, rightClickButton;

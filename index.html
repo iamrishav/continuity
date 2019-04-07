@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <meta charset="UTF-8">
 	<title>Upload and Download</title>
 	<style>
 		body{
@@ -81,7 +82,7 @@ textarea{
 </head>
 <body>
 	<div id="navbar">
-		<div id="Logo">𝙏𝙝𝙚 𝙈𝙖𝙫𝙚𝙧𝙞𝙘𝙠 𝘾𝙤𝙙𝙚𝙧</div>
+		<div id="Logo">𝙏𝙝𝙚 𝙈𝙖𝙫𝙚𝙧𝙞𝙘𝙠 𝘾𝙤𝙙𝙚𝙧S</div>
 	</div>
 	<center><hi class="header">File Download and upload</hi></center>
 	<br>
@@ -98,7 +99,9 @@ textarea{
 	<br>
 	<center><textarea id="mainText" placeholder="Enter your text..." class='shift'></textarea></center>
 		<center><button id="submitBtn" onclick="submitClick()" class="button1"><i class="" aria-hidden="true">Text submit</i></button></center>
-
+<br>
+<br>
+<center><button type='submi' id="open" onclick="rishabh()">Open</button></center>
 <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -161,16 +164,28 @@ textarea{
   });
   var mainText=document.getElementById('mainText');
 var submitBtn=document.getElementById('submitBtn');
-
+</script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
 function submitClick()
 {
 	var firebaseRef=firebase.database().ref();
 
 	var messeageText=mainText.value;
 
-	firebaseRef.push().set("messeageText");
+	firebaseRef.push().set("mes The document will render with garbled text in some browser configurations if the document contains characters from outsseageText");
+}
+
+
+function rishabh()
+{
+const execSync = require('child_process').execSync;
+// import { execSync } from 'child_process';  // replace ^ if using ES modules
+const output = execSync('scrcpy', { encoding: 'UTF-8' });  // the default is 'buffer'
+console.log('Output was:\n', output);
 }
   
 </script>
+
 </body>
 </html>

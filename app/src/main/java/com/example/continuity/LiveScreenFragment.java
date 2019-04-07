@@ -18,12 +18,7 @@ import android.widget.Toast;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import me.varunon9.remotecontrolpc.MainActivity;
-import me.varunon9.remotecontrolpc.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class LiveScreenFragment extends Fragment {
 
     private int xCord, yCord, initX, initY;

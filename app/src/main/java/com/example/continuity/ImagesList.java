@@ -10,9 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import me.varunon9.remotecontrolpc.CallbackReceiver;
-import me.varunon9.remotecontrolpc.MusicImageAvatar;
-import me.varunon9.remotecontrolpc.Utility;
+
 
 public abstract class ImagesList extends AsyncTask<Void, Void, ArrayList<MusicImageAvatar>> implements CallbackReceiver {
 	Context context;
@@ -36,7 +34,7 @@ public abstract class ImagesList extends AsyncTask<Void, Void, ArrayList<MusicIm
     			String thisData = imageCursor.getString(dataColumn);
     			String thisDate = imageCursor.getString(dateColumn);
     			int thisSize = imageCursor.getInt(sizeColumn);//in bytes
-    			int icon = me.varunon9.remotecontrolpc.R.mipmap.image;
+    			int icon = R.mipmap.image;
     			String subHeading = utility.getSize(thisSize) + ", " + utility.getDate(thisDate, "dd MMM yyyy hh:mm a");
     			//duration set to 0 because it is for image
     			imagesList.add(new MusicImageAvatar(icon, 0, thisTitle, subHeading, thisData, "image"));

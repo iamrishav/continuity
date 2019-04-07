@@ -2,9 +2,7 @@ package com.example.continuity;
 
 import android.os.AsyncTask;
 
-/**
- * Created by varun on 28/9/17.
- */
+
 
 public class SendMessageToServer extends AsyncTask<String, Void, Void> {
 

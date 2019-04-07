@@ -15,14 +15,9 @@ import android.widget.Toast;
 
 import java.io.File;
 
-import file.AvatarFile;
-import me.varunon9.remotecontrolpc.FileAPI;
-import me.varunon9.remotecontrolpc.MainActivity;
-import me.varunon9.remotecontrolpc.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
+
 public class FileTransferFragment extends Fragment implements View.OnClickListener {
 
     private Button backButton;
@@ -42,9 +37,9 @@ public class FileTransferFragment extends Fragment implements View.OnClickListen
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_file_transfer, container, false);
 
-        backButton = (Button) rootView.findViewById(me.varunon9.remotecontrolpc.R.id.backButton);
-        pathTextView = (TextView) rootView.findViewById(me.varunon9.remotecontrolpc.R.id.pathTextView);
-        fileTransferListView = (ListView) rootView.findViewById(me.varunon9.remotecontrolpc.R.id.fileTransferListView);
+        backButton = (Button) rootView.findViewById(R.id.backButton);
+        pathTextView = (TextView) rootView.findViewById(R.id.pathTextView);
+        fileTransferListView = (ListView) rootView.findViewById(R.id.fileTransferListView);
         currentPath = new FileAPI().getExternalStoragePath();
         rootPath = currentPath;
         currentDirectory = new File(currentPath);
@@ -88,7 +83,7 @@ public class FileTransferFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if (id == me.varunon9.remotecontrolpc.R.id.backButton) {
+        if (id == R.id.backButton) {
             currentPath = currentDirectory.getParent();
             currentDirectory = new File(currentPath);
             new GetFilesList(fileTransferListView, getActivity()).execute(currentPath);

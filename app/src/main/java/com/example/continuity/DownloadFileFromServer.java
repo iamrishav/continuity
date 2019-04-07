@@ -8,8 +8,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 
-import me.varunon9.remotecontrolpc.FileAPI;
-import me.varunon9.remotecontrolpc.MainActivity;
 
 public class DownloadFileFromServer extends AsyncTask<String, String, Void > {
 	

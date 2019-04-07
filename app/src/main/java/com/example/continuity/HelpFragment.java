@@ -13,11 +13,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
-import me.varunon9.remotecontrolpc.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class HelpFragment extends Fragment {
 
     private WebView helpFragmentWebView;

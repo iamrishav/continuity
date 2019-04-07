@@ -6,14 +6,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 
-import me.varunon9.remotecontrolpc.CallbackReceiver;
-import me.varunon9.remotecontrolpc.FileAPI;
-import me.varunon9.remotecontrolpc.MainActivity;
 
-
-/**
- * Created by varun on 23/5/17.
- */
 
 public abstract class UpdateScreenshot extends AsyncTask<Void, Void, String> implements CallbackReceiver {
     @Override

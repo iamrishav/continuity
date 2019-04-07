@@ -19,13 +19,9 @@ import android.widget.Toast;
 
 import java.util.Stack;
 
-import file.AvatarFile;
-import me.varunon9.remotecontrolpc.MainActivity;
-import me.varunon9.remotecontrolpc.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
+
 public class FileDownloadFragment extends Fragment implements View.OnClickListener {
 
     private Button backButton;
@@ -43,9 +39,9 @@ public class FileDownloadFragment extends Fragment implements View.OnClickListen
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_file_download, container, false);
-        backButton = (Button) rootView.findViewById(me.varunon9.remotecontrolpc.R.id.backButton);
-        pathTextView = (TextView) rootView.findViewById(me.varunon9.remotecontrolpc.R.id.pathTextView);
-        fileDownloadListView = (ListView) rootView.findViewById(me.varunon9.remotecontrolpc.R.id.fileTransferListView);
+        backButton = (Button) rootView.findViewById(R.id.backButton);
+        pathTextView = (TextView) rootView.findViewById(R.id.pathTextView);
+        fileDownloadListView = (ListView) rootView.findViewById(R.id.fileTransferListView);
         pathStack = new Stack<String>();
         pathStack.push("/");
         pathTextView.setText(pathStack.peek());
@@ -88,7 +84,7 @@ public class FileDownloadFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if (id == me.varunon9.remotecontrolpc.R.id.backButton) {
+        if (id == R.id.backButton) {
             pathStack.pop();
             String currentPath = pathStack.peek();
             getFiles();

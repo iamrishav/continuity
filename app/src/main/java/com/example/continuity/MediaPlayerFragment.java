@@ -15,16 +15,9 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import me.varunon9.remotecontrolpc.MainActivity;
-import me.varunon9.remotecontrolpc.MusicControlActivity;
-import me.varunon9.remotecontrolpc.MusicImageAvatar;
-import me.varunon9.remotecontrolpc.MusicImageAvatarAdapter;
-import me.varunon9.remotecontrolpc.R;
-import me.varunon9.remotecontrolpc.filetransfer.TransferFileToServer;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
+
 public class MediaPlayerFragment extends Fragment {
 
     ListView mediaPlayerListView;

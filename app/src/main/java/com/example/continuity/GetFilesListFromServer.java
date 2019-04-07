@@ -5,9 +5,7 @@ import android.os.AsyncTask;
 import java.io.ObjectInputStream;
 import java.util.ArrayList;
 
-import file.AvatarFile;
-import me.varunon9.remotecontrolpc.CallbackReceiver;
-import me.varunon9.remotecontrolpc.MainActivity;
+
 
 public abstract class GetFilesListFromServer extends AsyncTask<String, Void, ArrayList<AvatarFile>> implements CallbackReceiver {
 
