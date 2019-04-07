@@ -1,0 +1,38 @@
+Build started at 2019-04-07T07:41:04.493279
+Main binary: /usr/bin/python3
+Python system: Linux
+The Meson build system
+Version: 0.45.1
+Source dir: /home/iamrishav/continuity/screenmirrorApp
+Build dir: /home/iamrishav/continuity/screenmirrorApp/x
+Build type: native build
+Project name: continuity
+Sanity testing C compiler: cc
+Is cross compiler: False.
+Sanity check compiler command line: cc /home/iamrishav/continuity/screenmirrorApp/x/meson-private/sanitycheckc.c -o /home/iamrishav/continuity/screenmirrorApp/x/meson-private/sanitycheckc.exe
+Sanity check compile stdout:
+
+-----
+Sanity check compile stderr:
+
+-----
+Running test binary command: /home/iamrishav/continuity/screenmirrorApp/x/meson-private/sanitycheckc.exe
+Native C compiler: cc (gcc 7.3.0 "cc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0")
+Build machine cpu family: x86_64
+Build machine cpu: x86_64
+Found pkg-config: /usr/bin/pkg-config (0.29.1)
+Determining dependency 'libavformat' with pkg-config executable '/usr/bin/pkg-config'
+Native dependency libavformat found: YES 57.83.100
+Determining dependency 'libavcodec' with pkg-config executable '/usr/bin/pkg-config'
+Native dependency libavcodec found: YES 57.107.100
+Determining dependency 'libavutil' with pkg-config executable '/usr/bin/pkg-config'
+Native dependency libavutil found: YES 55.78.100
+Determining dependency 'sdl2' with pkg-config executable '/usr/bin/pkg-config'
+Native dependency sdl2 found: YES 2.0.8
+Configuring config.h using configuration
+Adding test "test_control_event_queue".
+Adding test "test_control_event_serialize".
+Adding test "test_strutil".
+Program ./scripts/build-wrapper.sh found: YES (/home/iamrishav/continuity/screenmirrorApp/server/./scripts/build-wrapper.sh)
+Build targets in project: 6
+Found ninja-1.8.2 at /usr/bin/ninja

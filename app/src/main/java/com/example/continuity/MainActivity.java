@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +18,11 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jaredrummler.android.shell.CommandResult;
+import com.jaredrummler.android.shell.Shell;
+
 import java.io.BufferedWriter;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
@@ -28,7 +33,7 @@ import java.net.Socket;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     Context context;
-    Button playPauseButton;
+    Button playPauseButton,click;
     Button nextButton;
     Button previousButton;
     TextView mousePad;
@@ -59,35 +64,66 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 //        navigationView.setNavigationItemSelectedListener(this);
 
+        click = findViewById(R.id.click);
+        click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                CommandResult result = Shell.SU.run("scrcpy");
+                if(result.isSuccessful()){
+                    Toast.makeText(MainActivity.this,"success",Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-//        if(id == R.id.action_connect) {
-//            ConnectPhoneTask connectPhoneTask = new ConnectPhoneTask();
-//            connectPhoneTask.execute(Constants.SERVER_IP); //try to connect to server in another thread
-//            return true;
-//        }
+        int id = item.getItemId();
+//       if(id==R.id.nav_connect) {
+//           try {
+//               Runtime.getRuntime().exec("scrcpy");
+//               Toast.makeText(this, "succesfull", Toast.LENGTH_SHORT).show();
+//           } catch (IOException e) {
+//               e.printStackTrace();
+//           }
+//           Toast.makeText(this, "succesfull", Toast.LENGTH_SHORT).show();
+//
+//       }
 
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        return false;
+
+        int id = menuItem.getItemId();
+        if(id==R.id.nav_connect) {
+            try {
+                Runtime.getRuntime().exec("scrcpy");
+                Toast.makeText(this, "succesfull", Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Toast.makeText(this, "failed", Toast.LENGTH_SHORT).show();
+
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+
+        return true;
+
+
     }
 }
 
