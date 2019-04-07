@@ -15,8 +15,16 @@
         <FrameLayout
             android:id="@+id/content_frame"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/click"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Click me"/>
+        </FrameLayout>
 
     </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

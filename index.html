@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upload and Download</title>
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		.hidden
+		{
+			display: none;
+		}
+		img 
+		{
+			width: 100%;
+			height: 100%;
+		}
+		#navbar
+		{
+			width: 100%;
+			height: 50px;
+			background-color: red;
+		}
+		#Logo
+		{
+			font-size: 30px;
+			color: white;
+		}
+		.header
+		{
+			font-size: 50px;
+		}
+		input, .buttton{
+	border: 0;
+	padding: 10px;
+}
+.mainDiv
+{
+	background: #fff;
+	padding: 20px;
+	width: 450px;
+	margin: 0px auto;
+	margin-top: 200px;
+	box-shadow: 0 0 20px #333;
+}
+h1
+{
+	font-weight: 300;
+	font-size: 24px;
+}
+textarea{
+	border: 0px;
+	background: #fff;
+	padding: 20px 0px;
+	outline: none;
+	width: 100%;
+	resize: none;
+}
+.button1
+{
+	background: #528bff;
+	color: #fff;
+	position: relative;
+	top: 50px;
+	width: 64px;
+	height: 64px;
+	line-height: 30px;
+	border-radius: 100%;
+}
+.shift
+
+{
+	margin-left: 50%;
+	font-size: 20px;
+	color: blue;
+}
+
+	</style>
+
+</head>
+<body>
+	<div id="navbar">
+		<div id="Logo">𝙏𝙝𝙚 𝙈𝙖𝙫𝙚𝙧𝙞𝙘𝙠 𝘾𝙤𝙙𝙚𝙧</div>
+	</div>
+	<center><hi class="header">File Download and upload</hi></center>
+	<br>
+	<center>
+	<progress value="0" max="100" id="uploadProgress" class="upload">O%</progress>
+	<input type="file" value="upload" id="uploadButton" class="upload">
+	</center>
+	<br>
+	<br>
+	<br>
+
+	<center><button type="button" id="downloadButton">Download</button></center>
+	<br>
+	<br>
+	<center><textarea id="mainText" placeholder="Enter your text..." class='shift'></textarea></center>
+		<center><button id="submitBtn" onclick="submitClick()" class="button1"><i class="" aria-hidden="true">Text submit</i></button></center>
+
+<script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDc9-MUL8l7d-ztKc_8ahLQ1dzMqvl8FAo",
+    authDomain: "upload-4ead9.firebaseapp.com",
+    databaseURL: "https://upload-4ead9.firebaseio.com",
+    projectId: "upload-4ead9",
+    storageBucket: "upload-4ead9.appspot.com",
+    messagingSenderId: "198074046012"
+  };
+  firebase.initializeApp(config);
+  var storage = firebase.storage();
+  var progress =document.getElementById('uploadProgress')
+  var button = document.getElementById('uploadButton')
+
+  var downloadButton = document.getElementById('downloadButton')
+
+  var imgRef = storage.ref('img/1.jpg')
+
+  downloadButton.addEventListener('click',function(){
+  	imgRef.getDownloadURL().then(function(url){
+  		window.alert("download")
+  		window.alert(url)
+
+  	})
+  })
+
+  button.addEventListener('change',function(e){
+  		var file=e.target.files[0];
+  		var storageRef=storage.ref('img/' + file.name)
+  		var uploadTask =storageRef.put(file)
+  		uploadTask.on('state_changed',loadUpload,errUpload,completeUpload)
+
+  		function loadUpload(data){
+  			var percent= (data.bytesTransferred/data.totalBytes)*100
+  			progress.value=percent;
+  		}
+  		function errUpload(err){
+  			console.log('error')
+  			console.log(err)
+
+  		}
+  		function completeUpload(data){
+  			console.log('success');
+  			console.log(url);
+
+
+
+  		}
+  		$(document).ready(function(){
+  			$('#downloadButton').onclick(function(){
+  				$(".upload").css("display","none");
+  			})
+  			$('#uploadButton').onclick(function(){
+  				$('#downloadButton').css("display","none");
+  				$('gs://upload-4ead9.appspot.com').show();
+  			})
+  		})
+  });
+  var mainText=document.getElementById('mainText');
+var submitBtn=document.getElementById('submitBtn');
+
+function submitClick()
+{
+	var firebaseRef=firebase.database().ref();
+
+	var messeageText=mainText.value;
+
+	firebaseRef.push().set("messeageText");
+}
+  
+</script>
+</body>
+</html>
